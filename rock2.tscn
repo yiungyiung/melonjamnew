@@ -8,6 +8,7 @@
 [node name="RigidBody2D" type="RigidBody2D" groups=["damagers"]]
 collision_layer = 128
 collision_mask = 143
+continuous_cd = 2
 max_contacts_reported = 5
 contact_monitor = true
 script = ExtResource("1_og16x")

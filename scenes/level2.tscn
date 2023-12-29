@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cdayf2owgnwli"]
+[gd_scene load_steps=13 format=3 uid="uid://cdayf2owgnwli"]
 
 [ext_resource type="Script" path="res://scripts/levelsqaure.gd" id="1_rxekk"]
 [ext_resource type="Texture2D" uid="uid://dha5i24m1ruht" path="res://sprites/Untitled_17.png" id="2_8dib5"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bdsje6ihwxppl" path="res://scenes/player.tscn" id="4_jj8m3"]
 [ext_resource type="Script" path="res://scripts/Timer.gd" id="4_r2cnr"]
 [ext_resource type="Script" path="res://scripts/enemy_spawn.gd" id="5_cmxth"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbnsf"]
+size = Vector2(1696.53, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dda7b"]
 size = Vector2(875, 837)
@@ -44,9 +47,23 @@ scale = Vector2(0.739155, 1)
 collision_layer = 8
 collision_mask = 3
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="levelsqaure/StaticBody2D"]
-position = Vector2(9.53674e-07, 5)
-polygon = PackedVector2Array(-827.972, -525, 727.858, -547, 734.623, 554, -823.914, 565, -830.678, -531, -891.559, -534, -887.5, 607, 804.973, 610, 804.973, -594, -892.912, -597, -892.912, -535)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="levelsqaure/StaticBody2D"]
+position = Vector2(-43.2927, -560.5)
+shape = SubResource("RectangleShape2D_nbnsf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="levelsqaure/StaticBody2D"]
+position = Vector2(-43.2927, 580)
+shape = SubResource("RectangleShape2D_nbnsf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="levelsqaure/StaticBody2D"]
+position = Vector2(769.798, 5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_nbnsf")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="levelsqaure/StaticBody2D"]
+position = Vector2(-855.03, -2)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_nbnsf")
 
 [node name="Area2D" type="Area2D" parent="levelsqaure"]
 script = ExtResource("4_r2cnr")

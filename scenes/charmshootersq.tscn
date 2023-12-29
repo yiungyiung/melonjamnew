@@ -13,6 +13,7 @@ size = Vector2(28, 26)
 collision_layer = 2
 collision_mask = 124
 physics_material_override = SubResource("PhysicsMaterial_rlxtf")
+continuous_cd = 2
 max_contacts_reported = 5
 contact_monitor = true
 script = ExtResource("1_6a0qy")

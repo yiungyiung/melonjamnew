@@ -9,6 +9,7 @@ size = Vector2(79, 75)
 [node name="square" type="RigidBody2D" groups=["damagers", "square"]]
 collision_layer = 32
 collision_mask = 43
+continuous_cd = 2
 max_contacts_reported = 5
 contact_monitor = true
 linear_velocity = Vector2(100, 2.08165e-12)

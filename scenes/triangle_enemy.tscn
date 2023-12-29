@@ -7,6 +7,7 @@
 collision_layer = 16
 collision_mask = 19
 gravity_scale = 1.66533e-16
+continuous_cd = 2
 max_contacts_reported = 5
 contact_monitor = true
 script = ExtResource("1_pkdnt")
