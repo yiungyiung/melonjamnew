@@ -58,7 +58,7 @@ shape = SubResource("RectangleShape2D_dda7b")
 script = ExtResource("5_cmxth")
 
 [node name="circle_spawn" type="CollisionShape2D" parent="Enemy_spawns"]
-position = Vector2(515.5, -270)
+position = Vector2(515, -308)
 shape = SubResource("RectangleShape2D_00coi")
 
 [node name="square_spawn" type="CollisionShape2D" parent="Enemy_spawns"]
