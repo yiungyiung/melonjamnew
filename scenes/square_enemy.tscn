@@ -1,14 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cunyk8q8au574"]
+[gd_scene load_steps=4 format=3 uid="uid://cunyk8q8au574"]
 
+[ext_resource type="Script" path="res://scenes/square_enemy.gd" id="1_40lbv"]
 [ext_resource type="Texture2D" uid="uid://dh8u4bftepd7q" path="res://sprites/square enemy.png" id="1_yej46"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5tgg"]
 size = Vector2(79, 75)
 
-[node name="square" type="RigidBody2D" groups=["square"]]
+[node name="square" type="RigidBody2D" groups=["damagers", "square"]]
 collision_layer = 32
 collision_mask = 43
+max_contacts_reported = 5
+contact_monitor = true
 linear_velocity = Vector2(100, 2.08165e-12)
+script = ExtResource("1_40lbv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)

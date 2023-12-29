@@ -6,7 +6,7 @@ const JUMP_VELOCITY = -1000.0
 signal enemyspwan(index)
 @export var neggrav: int
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+var health=100
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():

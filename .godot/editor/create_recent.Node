@@ -1,12 +1,12 @@
+Marker2D
+Sprite2D
 CollisionShape2D
 RigidBody2D
 Node2D
 Timer
-Sprite2D
 CollisionPolygon2D
 Area2D
 Polygon2D
-Marker2D
 StaticBody2D
 RayCast2D
 Camera2D

@@ -46,7 +46,7 @@ collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="levelsqaure/StaticBody2D"]
 position = Vector2(9.53674e-07, 5)
-polygon = PackedVector2Array(-827.972, -525, 727.858, -547, 734.623, 554, -823.914, 565, -830.678, -531, -891.559, -534, -887.5, 607, 804.973, 610, 804.973, -594, -892.912, -597, -892.912, -535)
+polygon = PackedVector2Array(-830.678, -531, 727.858, -547, 734.623, 554, -823.914, 565, -830.678, -531, -891.559, -534, -887.5, 607, 804.973, 610, 804.973, -594, -892.912, -597, -892.912, -535)
 
 [node name="Area2D" type="Area2D" parent="levelsqaure"]
 script = ExtResource("4_r2cnr")
@@ -59,8 +59,6 @@ shape = SubResource("RectangleShape2D_dda7b")
 
 [node name="Enemy_spawns" type="Area2D" parent="."]
 script = ExtResource("5_cmxth")
-
-[node name="Marker2D" type="Marker2D" parent="Enemy_spawns"]
 
 [node name="circle_spawn" type="CollisionShape2D" parent="Enemy_spawns"]
 position = Vector2(515, -308)
