@@ -51,6 +51,7 @@ shoot={
 2d_physics/layer_5="enemies"
 2d_physics/layer_6="sqaaure"
 2d_physics/layer_7="circleenemy"
+2d_physics/layer_8="rock"
 
 [rendering]
 

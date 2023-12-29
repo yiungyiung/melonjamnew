@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdayf2owgnwli"]
+[gd_scene load_steps=12 format=3 uid="uid://cdayf2owgnwli"]
 
 [ext_resource type="Script" path="res://scripts/levelsqaure.gd" id="1_rxekk"]
 [ext_resource type="Texture2D" uid="uid://dha5i24m1ruht" path="res://sprites/Untitled_17.png" id="2_8dib5"]
@@ -18,6 +18,9 @@ size = Vector2(1032, 116)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sy3b5"]
 size = Vector2(28, 975)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5njou"]
+size = Vector2(1053, 888)
 
 [node name="level" type="Node2D"]
 
@@ -68,6 +71,10 @@ shape = SubResource("RectangleShape2D_453q1")
 [node name="triangle_spawn" type="CollisionShape2D" parent="Enemy_spawns"]
 position = Vector2(-123, 350.5)
 shape = SubResource("RectangleShape2D_sy3b5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_spawns"]
+position = Vector2(516.5, 333)
+shape = SubResource("RectangleShape2D_5njou")
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("4_jj8m3")]
 position = Vector2(368, 261)

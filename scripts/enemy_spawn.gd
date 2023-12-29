@@ -4,6 +4,12 @@ var circle_enemy= preload("res://scenes/circle_enemy.tscn")
 var triangle_enemy=preload("res://scenes/triangle_enemy.tscn")
 var square_enemy=preload("res://scenes/square_enemy.tscn")
 var player
+var objectToSpawn = preload("res://rock.tscn")
+var spawnTimer = 3.0  
+var deleteTimer = 2.0  
+var timeSinceLastSpawn = 0.0
+var timeSinceLastDelete = 0.0
+
 
 func spawnPos(area):
 	var areaBounds=area.shape.extents*2
@@ -15,11 +21,21 @@ func spawnPos(area):
 	
 func _ready():
 	var player=get_node("../Player")
+	_spawnObject()
 	#player.connect("shape", enemy)
 
 
-func _process(delta):
-	pass
+func _physics_process(delta):
+	timeSinceLastSpawn += delta
+	timeSinceLastDelete += delta
+	
+	
+	
+	if timeSinceLastSpawn > spawnTimer:
+		print("hello")
+		_spawnObject()
+		timeSinceLastSpawn = 0.0
+	
 
 
 func enemy(charm):
@@ -37,7 +53,19 @@ func enemy(charm):
 		triangle.player=$"../Player"
 		triangle.position=spawnPos($triangle_spawn)
 		root.add_child(triangle)
-		
+func _spawnObject():
+	print("ok")
+	for i in range(0,randi_range(10,15)):
+		print("ok1")
+		var newObject = objectToSpawn.instantiate()
+		newObject.position=spawnPos($CollisionShape2D)
+		add_child(newObject)
+		print(newObject)
+
+	
+	
+
+
 	
 
 

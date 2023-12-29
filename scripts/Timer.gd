@@ -6,6 +6,9 @@ var spawned = 0
 var area: CollisionShape2D
 var spawn_positions = []  # Store the spawn positions
 var min_distance=250
+var rocky=preload("res://rock.tscn")
+var time=0.0
+var elapsed=0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -48,3 +51,5 @@ func spawnBars():
 		spawner.scale.x = randf_range(0.3, 0.5)
 		add_child(spawner)
 		spawned += 1
+
+		

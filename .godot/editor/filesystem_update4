@@ -1,3 +1,4 @@
+res://scenes/Timer.gd
 res://scenes/level2.tscn
 res://scenes/bar.tscn
 res://scenes/charmshooter.tscn
@@ -7,3 +8,9 @@ res://scenes/player.tscn
 res://scenes/triangle_enemy.tscn
 res://scenes/square_enemy.tscn
 res://scenes/circle_enemy.tscn
+res://rock.tscn
+res://scripts/Timer.gd
+res://scenes/Node2D.gd
+res://scripts/enemy_spawn.gd
+res://rock.gd
+res://proto.tscn
