@@ -1,0 +1,37 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1703860136
+icon.svg::CompressedTexture2D::36038994824494321::1703741896::1703741901::1::::<><>::
+::res://audio/::1703742152
+::res://scenes/::1703853501
+bar.tscn::PackedScene::3799583211065378774::1703853467::0::1::::<><>::uid://bpkx2lfdaf673::::res://sprites/bar.png
+charmshooter.tscn::PackedScene::5416577356354759898::1703853467::0::1::::<><>::res://scripts/charmtoshot.gd<>uid://cbqtr6mma1sx7::::res://sprites/cirlce.png
+charmshootersq.tscn::PackedScene::3915107773624252608::1703853467::0::1::::<><>::res://scripts/charmtoshot.gd<>uid://ngxt8ca36wu::::res://sprites/swuare.png
+charmshootertri.tscn::PackedScene::1421184543300866442::1703853467::0::1::::<><>::res://scripts/charmtoshot.gd<>uid://rhjngbwqj5re::::res://sprites/tri.png
+circle_enemy.tscn::PackedScene::7265327153622104437::1703853501::0::1::::<><>::uid://dcyl4db1p8h5v::::res://sprites/circle enemy.png
+level2.tscn::PackedScene::4984875475862068702::1703853467::0::1::::<><>::res://scripts/levelsqaure.gd<>uid://dha5i24m1ruht::::res://sprites/Untitled_17.png<>uid://cuetlohpxedu0::::res://sprites/box.png<>uid://bdsje6ihwxppl::::res://scenes/player.tscn<>res://scripts/Timer.gd<>res://scripts/enemy_spawn.gd
+player.tscn::PackedScene::2634701251221450941::1703853467::0::1::::<><>::res://scripts/player.gd<>uid://t7cenbl1gsoy::::res://sprites/idle.png<>res://scripts/charmshooter.gd<>uid://ctl2n5vnqaa11::::res://sprites/reticle.png
+square_enemy.tscn::PackedScene::6204931976202687253::1703853467::0::1::::<><>::uid://dh8u4bftepd7q::::res://sprites/square enemy.png
+triangle_enemy.tscn::PackedScene::7248330481171435428::1703853467::0::1::::<><>::res://scripts/triangle_enemy.gd<>uid://bgsa2agrm4yt7::::res://sprites/triangle enemy.png
+::res://scripts/::1703853155
+charmshooter.gd::GDScript::-1::1703852782::0::1::::<>Node2D<>::
+charmtoshot.gd::GDScript::-1::1703829389::0::1::::<>RigidBody2D<>::
+circleEnemy.gd::GDScript::-1::1703851938::0::1::::<>RigidBody2D<>::
+enemy_spawn.gd::GDScript::-1::1703851938::0::1::::<>Area2D<>::
+levelsqaure.gd::GDScript::-1::1703851724::0::1::::<>Node2D<>::
+player.gd::GDScript::-1::1703851938::0::1::::<>CharacterBody2D<>::
+Timer.gd::GDScript::-1::1703824474::0::1::::<>Area2D<>::
+triangle_enemy.gd::GDScript::-1::1703853155::0::1::::<>RigidBody2D<>::
+::res://sprites/::1703852620
+bar.png::CompressedTexture2D::3461342408690658848::1703776447::1703776447::1::::<><>::
+box.png::CompressedTexture2D::6186049764611566973::1703753006::1703753006::1::::<><>::
+circle enemy.png::CompressedTexture2D::7349904639714002725::1703851938::1703851938::1::::<><>::
+cirlce.png::CompressedTexture2D::4877245883755913030::1703828718::1703828718::1::::<><>::
+idle.png::CompressedTexture2D::1399777379296828460::1703775906::1703775952::1::::<><>::
+jump.png::CompressedTexture2D::2753418854664184682::1703775906::1703775952::1::::<><>::
+reticle.png::CompressedTexture2D::6130801734682372974::1703852617::1703852620::1::::<><>::
+square enemy.png::CompressedTexture2D::7719974611424658484::1703851938::1703851938::1::::<><>::
+swuare.png::CompressedTexture2D::27243335033394908::1703828718::1703828718::1::::<><>::
+tri.png::CompressedTexture2D::1208230972086885766::1703828718::1703828718::1::::<><>::
+triangle enemy.png::CompressedTexture2D::2844760771588236494::1703851938::1703851938::1::::<><>::
+Untitled_17.png::CompressedTexture2D::7652421216190206265::1703753006::1703753006::1::::<><>::
+walk.png::CompressedTexture2D::6591001718991002923::1703775906::1703775952::1::::<><>::

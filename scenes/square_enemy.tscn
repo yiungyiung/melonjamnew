@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cunyk8q8au574"]
+
+[ext_resource type="Texture2D" uid="uid://dh8u4bftepd7q" path="res://sprites/square enemy.png" id="1_yej46"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5tgg"]
+size = Vector2(79, 75)
+
+[node name="square" type="RigidBody2D" groups=["square"]]
+collision_layer = 32
+collision_mask = 43
+linear_velocity = Vector2(100, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_yej46")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -0.5)
+shape = SubResource("RectangleShape2D_b5tgg")

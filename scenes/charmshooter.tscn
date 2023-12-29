@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjf3ic1cdtwdu"]
+
+[ext_resource type="Script" path="res://scripts/charmtoshot.gd" id="1_jnbx8"]
+[ext_resource type="Texture2D" uid="uid://cbqtr6mma1sx7" path="res://sprites/cirlce.png" id="2_j84ue"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rlxtf"]
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_br105"]
+radius = 17.1172
+
+[node name="charmshooter" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 124
+physics_material_override = SubResource("PhysicsMaterial_rlxtf")
+script = ExtResource("1_jnbx8")
+
+[node name="Cirlce" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_j84ue")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_br105")

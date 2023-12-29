@@ -1,0 +1,9 @@
+res://scenes/level2.tscn
+res://scenes/bar.tscn
+res://scenes/charmshooter.tscn
+res://scenes/charmshootersq.tscn
+res://scenes/charmshootertri.tscn
+res://scenes/player.tscn
+res://scenes/triangle_enemy.tscn
+res://scenes/square_enemy.tscn
+res://scenes/circle_enemy.tscn

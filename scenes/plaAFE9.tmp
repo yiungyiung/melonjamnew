@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdsje6ihwxppl"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_oyv4v"]
+[ext_resource type="Texture2D" uid="uid://t7cenbl1gsoy" path="res://sprites/idle.png" id="2_55bnq"]
+[ext_resource type="Script" path="res://scripts/charmshooter.gd" id="3_fc26t"]
+[ext_resource type="Texture2D" uid="uid://bpkx2lfdaf673" path="res://sprites/bar.png" id="4_xlbdw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avv5m"]
+size = Vector2(125, 127)
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_oyv4v")
+metadata/_edit_horizontal_guides_ = [-70.0]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -53)
+rotation = 3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_avv5m")
+
+[node name="Icon" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(3.33786e-06, 3.33786e-06)
+scale = Vector2(0.269639, 0.273118)
+texture = ExtResource("2_55bnq")
+
+[node name="shoter" type="Node2D" parent="."]
+position = Vector2(9.53674e-07, 0)
+script = ExtResource("3_fc26t")
+
+[node name="Bar" type="Sprite2D" parent="shoter"]
+position = Vector2(45.7143, 9.09495e-13)
+rotation = 3.14159
+scale = Vector2(0.163758, -0.257143)
+texture = ExtResource("4_xlbdw")
+
+[node name="Marker2D" type="Marker2D" parent="shoter/Bar"]
+position = Vector2(-348.946, -1.94273e-05)

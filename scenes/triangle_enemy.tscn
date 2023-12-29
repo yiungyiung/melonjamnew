@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbje7dkgavf6k"]
+
+[ext_resource type="Script" path="res://scripts/triangle_enemy.gd" id="1_pkdnt"]
+[ext_resource type="Texture2D" uid="uid://bgsa2agrm4yt7" path="res://sprites/triangle enemy.png" id="1_y2wvs"]
+
+[node name="Node2D" type="RigidBody2D" groups=["triangle"]]
+collision_layer = 16
+collision_mask = 19
+gravity_scale = 1.66533e-16
+script = ExtResource("1_pkdnt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_y2wvs")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.646684, 0.69563)
+polygon = PackedVector2Array(-10, -65, -5, -66, 74, 55, -73, 57, -10, -65)
