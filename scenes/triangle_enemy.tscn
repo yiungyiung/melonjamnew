@@ -3,13 +3,10 @@
 [ext_resource type="Script" path="res://scripts/triangle_enemy.gd" id="1_pkdnt"]
 [ext_resource type="Texture2D" uid="uid://bgsa2agrm4yt7" path="res://sprites/triangle enemy.png" id="1_y2wvs"]
 
-[node name="Node2D" type="RigidBody2D" groups=["damagers", "triangle"]]
+[node name="Node2D" type="RigidBody2D" groups=["triangle"]]
 collision_layer = 16
 collision_mask = 19
 gravity_scale = 1.66533e-16
-continuous_cd = 2
-max_contacts_reported = 5
-contact_monitor = true
 script = ExtResource("1_pkdnt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
