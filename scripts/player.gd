@@ -8,7 +8,7 @@ signal enemyspwan(index)
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 var health=100
 var crystalcount=0
-
+var score=0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -36,7 +36,14 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-
+func redhealth(val : int):
+	if(health>0):
+		health-=val
+	else:
+		health=0
+func increasescore(val : int):
+	score+=val
+	print(score)
 func _on_shoter_shape(currentcharm):
 	enemyspwan.emit(currentcharm)
 	

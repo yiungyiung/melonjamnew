@@ -26,7 +26,6 @@ func _process(delta):
 	var col=get_colliding_bodies()
 	for i in col:
 		if i.is_in_group("player"):
-			particle(Color.ROSY_BROWN)
-			i.health-=10
-			print(i.health)
+			particle(Color.RED)
+			i.redhealth(10)
 			queue_free()

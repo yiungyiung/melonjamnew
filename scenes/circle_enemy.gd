@@ -21,8 +21,7 @@ func _process(delta: float) -> void:
 	for i in col:
 		if i.is_in_group("player"):
 			particle(Color.RED)
-			i.health-=10
-			print(i.health)
+			i.redhealth(10)
 			queue_free()
 
 	

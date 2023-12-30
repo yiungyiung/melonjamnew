@@ -40,20 +40,18 @@ func _process(delta: float) -> void:
 			
 	else:
 		if is_holding:
-			print(lastcharm)
 			if canshoot:
 				var hold_value = min(hold_time / max_hold_time * 100, 100)
-				print("Mouse released after: ", hold_time, " seconds. Hold value: ", hold_value)
 				var spawner = charms[currentcharm].instantiate()
 				tele=currentcharm
 				currentcharm=nextcharm
 				nextcharm=randi()%charms.size()
 				spawner.addimpulse(global_position.direction_to(get_global_mouse_position()),hold_value*20)
 				spawner.position=$Marker2D.global_position
+				spawner.player=$".."
 				var root = get_tree().get_root()
 				lastcharm=spawner
 				root.add_child(spawner)
-			print(lastcharm)
 			is_holding = false
 			hold_time = 0
 			canshoot=true

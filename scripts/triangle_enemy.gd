@@ -10,7 +10,7 @@ func particle(color):
 	effect.position=position
 	effect.color=color
 	effect.emitting=true
-	add_child(effect)
+	get_tree().get_root().add_child(effect)
 func _ready():
 	pass 
 	
@@ -21,6 +21,5 @@ func _process(delta):
 	for i in col:
 		if i.is_in_group("player"):
 			particle(Color.RED)
-			i.health-=10
-			print(i.health)
+			i.redhealth(10)
 			queue_free()
