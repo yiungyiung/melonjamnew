@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cdayf2owgnwli"]
+[gd_scene load_steps=38 format=3 uid="uid://cdayf2owgnwli"]
 
 [ext_resource type="Script" path="res://scripts/ParallaxBackground.gd" id="1_5vu0h"]
 [ext_resource type="Script" path="res://scripts/levelsqaure.gd" id="1_rxekk"]
@@ -20,6 +20,14 @@
 [ext_resource type="Texture2D" uid="uid://cisdyl1giqc4j" path="res://sprites/green.png" id="16_eq1cr"]
 [ext_resource type="FontFile" uid="uid://c6r3ge5k6rlsq" path="res://sprites/Cosmonaut.ttf" id="17_doqs5"]
 [ext_resource type="Texture2D" uid="uid://yg0a6j247bhw" path="res://sprites/rub.png" id="20_olxx6"]
+[ext_resource type="AudioStream" uid="uid://fgpkhccjulp6" path="res://sounds/jump.wav" id="21_qokwv"]
+[ext_resource type="AudioStream" uid="uid://cow6sl1lfo3cm" path="res://sounds/hurt.wav" id="22_b4bmp"]
+[ext_resource type="AudioStream" uid="uid://cxtigg5pp4ku5" path="res://sounds/gem.wav" id="23_pc1om"]
+[ext_resource type="AudioStream" uid="uid://tpnl1dpf0fsg" path="res://sounds/teleport.wav" id="24_xxmpe"]
+[ext_resource type="AudioStream" uid="uid://br5dnfbilmaa3" path="res://sounds/enemydie.wav" id="25_8uts6"]
+[ext_resource type="AudioStream" uid="uid://bnhwt1j8yyjh3" path="res://sounds/shoot.wav" id="26_o7rcr"]
+[ext_resource type="AudioStream" uid="uid://daiej5mw1o80u" path="res://sounds/dead.wav" id="27_fhe44"]
+[ext_resource type="AudioStream" uid="uid://b43wa7glndw3w" path="res://sounds/expplsion.wav" id="28_s5xnj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbnsf"]
 size = Vector2(1696.53, 61)
@@ -207,17 +215,6 @@ zoom = Vector2(0.425, 0.425)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
-offset_left = -774.0
-offset_top = 90.0
-offset_right = 313.0
-offset_bottom = 261.0
-value = 100.0
-fill_mode = 1
-texture_under = ExtResource("15_wm8bh")
-texture_progress = ExtResource("16_eq1cr")
-script = ExtResource("15_q3svu")
-
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -227,32 +224,92 @@ offset_right = -258.0
 offset_bottom = -284.0
 script = ExtResource("15_a0p8a")
 
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control"]
+layout_mode = 0
+offset_left = 2056.0
+offset_top = 46.0
+offset_right = 3143.0
+offset_bottom = 217.0
+scale = Vector2(0.569064, 0.667277)
+value = 50.0
+fill_mode = 1
+texture_under = ExtResource("15_wm8bh")
+texture_progress = ExtResource("16_eq1cr")
+texture_progress_offset = Vector2(23.295, 15.275)
+script = ExtResource("15_q3svu")
+
 [node name="Timer" type="Timer" parent="Control"]
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 149.0
-offset_top = 38.0
-offset_right = 672.0
-offset_bottom = 194.0
+offset_left = 33.0
+offset_top = 46.0
+offset_right = 556.0
+offset_bottom = 202.0
 text = "Time left: 0:0"
 label_settings = SubResource("LabelSettings_gefbc")
+
+[node name="score" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 2165.0
+offset_top = 362.0
+offset_right = 2688.0
+offset_bottom = 518.0
+text = "Score: 0:0"
+label_settings = SubResource("LabelSettings_gefbc")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="charm_count" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.237
-offset_left = 149.0
-offset_top = 194.0
-offset_right = 425.0
-offset_bottom = 239.011
-text = "0"
+offset_left = 2223.0
+offset_top = 241.0
+offset_right = 2499.0
+offset_bottom = 286.011
+text = "0 X "
 label_settings = SubResource("LabelSettings_qu430")
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
-position = Vector2(85, 233)
+position = Vector2(2575, 257)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("20_olxx6")
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_qokwv")
+volume_db = -20.0
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_b4bmp")
+volume_db = -20.0
+
+[node name="gem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_pc1om")
+volume_db = -20.0
+
+[node name="teleport" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_xxmpe")
+volume_db = -20.0
+
+[node name="enemydie" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_8uts6")
+volume_db = -20.0
+
+[node name="shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_o7rcr")
+volume_db = -20.0
+
+[node name="Dead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_fhe44")
+volume_db = -20.0
+
+[node name="expo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_s5xnj")
+volume_db = -10.0
 
 [connection signal="enemyspwan" from="Player" to="Enemy_spawns" method="_on_player_enemyspwan"]
 [connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]

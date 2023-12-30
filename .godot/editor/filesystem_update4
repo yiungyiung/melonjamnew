@@ -10,6 +10,6 @@ res://liner.tscn
 res://proto.tscn
 res://scenes/Control.gd
 res://scripts/player.gd
-res://scenes/ProgressBar.gd
-res://Panel.gd
+res://scripts/charmshooter.gd
+res://scripts/charmtoshot.gd
 res://stones.gd

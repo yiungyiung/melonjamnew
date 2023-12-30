@@ -16,8 +16,8 @@ func _process(delta):
 	Dseconds-=delta
 	
 	$Label.text="Time left: %0.2f"%(Dseconds)
-	$charm_count.text="X"+str($"../Player".crystalcount)
-	
+	$charm_count.text=str($"../Player".crystalcount)+" X "
+	$score.text="Score: "+str($"../Player".score)
 	
 	
 	

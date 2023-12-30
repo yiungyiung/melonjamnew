@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://jbseqh03fbsu"]
 
-[ext_resource type="Texture2D" uid="uid://jpwbh8a1jf5s" path="res://sprites/stone.png" id="1_8i1w3"]
 [ext_resource type="Script" path="res://stones.gd" id="1_o053b"]
+[ext_resource type="Texture2D" uid="uid://yg0a6j247bhw" path="res://sprites/rub.png" id="2_88wyg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15s2e"]
 size = Vector2(67, 66)
@@ -15,7 +15,7 @@ shape = SubResource("RectangleShape2D_15s2e")
 [node name="Stone" type="Sprite2D" parent="."]
 z_index = 1
 z_as_relative = false
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_8i1w3")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_88wyg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

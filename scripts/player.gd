@@ -13,7 +13,13 @@ var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var currentHealth:int=health
 var crystalcount=0
 var score=0
-
+var teleport
+var shootsound
+var expo
+func _ready() -> void:
+	teleport=$"../teleport"
+	shootsound=$"../shoot"
+	expo=$"../expo"
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -27,7 +33,9 @@ func _physics_process(delta: float) -> void:
 		$CollisionShape2D.rotation=normal.angle()+deg_to_rad(90)
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and (is_on_ceiling() || is_on_floor()):
-		velocity.y = neggrav* JUMP_VELOCITY
+		$"../Jump".playing=true
+		var directions = global_transform.y
+		velocity = directions * JUMP_VELOCITY
 	
 	var direction := Input.get_axis("left", "right")
 	
@@ -44,7 +52,7 @@ func _physics_process(delta: float) -> void:
 func redhealth(val : int):
 	if(health>0):
 		health-=val
-		
+		$"../Hit".playing=true
 		health_changed.emit()
 		
 	else:
@@ -52,6 +60,10 @@ func redhealth(val : int):
 		
 func increasescore(val : int):
 	score+=val
+
+func increasecrystal():
+	$"../gem".playing=true
+	crystalcount+=1
 	
 	print(score)
 func _on_shoter_shape(currentcharm):

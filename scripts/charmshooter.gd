@@ -31,6 +31,7 @@ func _process(delta: float) -> void:
 				hold_time = max_hold_time
 		elif (lastcharm!=null) :
 			is_holding = true
+			$"..".teleport.playing=true
 			$"..".position=lastcharm.global_position
 			lastcharm.queue_free()
 			canshoot=false
@@ -49,8 +50,10 @@ func _process(delta: float) -> void:
 				spawner.addimpulse(global_position.direction_to(get_global_mouse_position()),hold_value*20)
 				spawner.position=$Marker2D.global_position
 				spawner.player=$".."
+				spawner.explosioneffect=$"..".expo
 				var root = get_tree().get_root()
 				lastcharm=spawner
+				$"..".shootsound.playing=true
 				root.add_child(spawner)
 			is_holding = false
 			hold_time = 0
