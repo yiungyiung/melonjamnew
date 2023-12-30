@@ -27,3 +27,7 @@ func _process(delta: float) -> void:
 	var direction = (player.global_position- global_position).normalized()
 	direction.y = 0
 	apply_central_impulse(direction*25)
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free() # Replace with function body.

@@ -18,3 +18,7 @@ texture = ExtResource("1_y2wvs")
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.646684, 0.69563)
 polygon = PackedVector2Array(-10, -65, -5, -66, 74, 55, -73, 57, -10, -65)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

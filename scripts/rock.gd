@@ -29,3 +29,7 @@ func _process(delta):
 			particle(Color.RED)
 			i.redhealth(10)
 			queue_free()
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()# Replace with function body.

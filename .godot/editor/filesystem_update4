@@ -14,3 +14,9 @@ res://scripts/charmshooter.gd
 res://scripts/charmtoshot.gd
 res://stones.gd
 res://scenes/main.tscn
+res://scripts/circleEnemy.gd
+res://scenes/square_enemy.gd
+res://scripts/triangle_enemy.gd
+res://scripts/rock.gd
+res://scenes/charmshootertri.tscn
+res://scenes/charmshootersq.tscn

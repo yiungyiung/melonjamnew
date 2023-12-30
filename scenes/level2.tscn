@@ -209,7 +209,7 @@ floor_stop_on_slope = false
 neggrav = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(570, 320)
+position = Vector2(593, 351)
 zoom = Vector2(0.425, 0.425)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
