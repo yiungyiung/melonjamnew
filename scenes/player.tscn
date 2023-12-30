@@ -17,6 +17,8 @@ script = ExtResource("1_oyv4v")
 metadata/_edit_horizontal_guides_ = [-70.0]
 
 [node name="Trail" parent="." instance=ExtResource("2_qpefy")]
+width = 30.0
+default_color = Color(0.647059, 0.580392, 1, 0.937255)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(0, -53)

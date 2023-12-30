@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq2pxhodqpto3"]
+
+[ext_resource type="Script" path="res://scripts/particle.gd" id="1_ydnss"]
+
+[sub_resource type="Curve" id="Curve_w6gr2"]
+_data = [Vector2(0, 0.982155), 0.0, 0.0, 0, 0, Vector2(0.996, 0.0140699), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Node2D" type="CPUParticles2D"]
+emitting = false
+amount = 60
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(2.08165e-12, 2.08165e-12)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+scale_amount_min = 3.0
+scale_amount_max = 6.0
+scale_amount_curve = SubResource("Curve_w6gr2")
+color = Color(1, 0.282353, 0.2, 1)
+script = ExtResource("1_ydnss")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

@@ -54,7 +54,7 @@ func enemy(charm):
 		triangle.position=spawnPos($triangle_spawn)
 		root.add_child(triangle)
 func _spawnObject():
-	for i in range(0,randi_range(5,8)):
+	for i in range(0,randi_range(2,5)):
 		var newObject = objectToSpawn.instantiate()
 		newObject.position=spawnPos($CollisionShape2D)
 		get_tree().get_root().add_child(newObject)
