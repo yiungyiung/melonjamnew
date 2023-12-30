@@ -11,6 +11,7 @@ var nextcharm
 var tele
 var originalscale 
 signal shape(currentcharm)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	currentcharm=randi()% charms.size() # Replace with function body.
@@ -35,7 +36,7 @@ func _process(delta: float) -> void:
 			canshoot=false
 			lastcharm=null
 			shape.emit(tele)
-			
+		
 			
 	else:
 		if is_holding:
@@ -56,3 +57,5 @@ func _process(delta: float) -> void:
 			is_holding = false
 			hold_time = 0
 			canshoot=true
+
+

@@ -6,3 +6,11 @@ res://scenes/square_enemy.tscn
 res://scenes/circle_enemy.tscn
 res://rock2.tscn
 res://proto.tscn
+res://scenes/COPYLEVEL.tscn
+res://scenes/rock2.tscn
+res://scripts/enemy_spawn.gd
+res://scripts/player.gdshader
+res://scripts/trail.gd
+res://scripts/charmshooter.gd
+res://scripts/player.gd
+res://scenes/trail.tscn

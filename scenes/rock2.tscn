@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://4s68dg23pvaq"]
+[gd_scene load_steps=4 format=3 uid="uid://dbft48wnnw08j"]
 
-[ext_resource type="Texture2D" path="res://rock.png" id="1_445n1"]
-[ext_resource type="Script" path="res://rock.gd" id="1_og16x"]
+[ext_resource type="Script" path="res://scripts/rock.gd" id="1_wxefe"]
+[ext_resource type="Texture2D" uid="uid://efj2ncqool1m" path="res://sprites/rock.png" id="2_0m6xr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_65vvp"]
 
@@ -11,7 +11,7 @@ collision_mask = 143
 continuous_cd = 2
 max_contacts_reported = 5
 contact_monitor = true
-script = ExtResource("1_og16x")
+script = ExtResource("1_wxefe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.3, 0.3)
@@ -19,4 +19,4 @@ shape = SubResource("CircleShape2D_65vvp")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
 position = Vector2(12, 25)
-texture = ExtResource("1_445n1")
+texture = ExtResource("2_0m6xr")

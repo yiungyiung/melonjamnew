@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://bdsje6ihwxppl"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_oyv4v"]
-[ext_resource type="Texture2D" uid="uid://t7cenbl1gsoy" path="res://sprites/idle.png" id="2_55bnq"]
+[ext_resource type="Texture2D" uid="uid://bftc1vjk0ssfy" path="res://sprites/c1.png" id="2_3oj28"]
 [ext_resource type="Script" path="res://scripts/charmshooter.gd" id="3_fc26t"]
-[ext_resource type="Texture2D" uid="uid://ctl2n5vnqaa11" path="res://sprites/reticle.png" id="4_33uav"]
+[ext_resource type="Texture2D" uid="uid://caog1c5tfe8d6" path="res://sprites/shoot.png" id="4_jqeji"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_avv5m"]
-size = Vector2(125, 127)
+size = Vector2(106.286, 127)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.7, 0.7)
@@ -20,26 +20,28 @@ position = Vector2(0, -53)
 rotation = 3.14159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -0.5)
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(1.2, 1.2)
 shape = SubResource("RectangleShape2D_avv5m")
 
 [node name="Icon" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(3.33786e-06, 3.33786e-06)
-scale = Vector2(0.269639, 0.273118)
-texture = ExtResource("2_55bnq")
+position = Vector2(-2.98023e-08, -5.96046e-08)
+scale = Vector2(0.505416, 0.474433)
+texture = ExtResource("2_3oj28")
 
 [node name="shoter" type="Node2D" parent="."]
 position = Vector2(9.53674e-07, 0)
 script = ExtResource("3_fc26t")
 
 [node name="Bar" type="Sprite2D" parent="shoter"]
-position = Vector2(4.28571, 8.65412e-12)
+position = Vector2(-53.9736, -73.837)
 rotation = 3.14159
-scale = Vector2(0.114, -0.257)
-texture = ExtResource("4_33uav")
+scale = Vector2(0.221317, -1.21088)
+texture = ExtResource("4_jqeji")
 offset = Vector2(-554.175, 59.915)
 
 [node name="Marker2D" type="Marker2D" parent="shoter/Bar"]
-position = Vector2(-1127.82, 0.0012683)
+position = Vector2(-844.175, 57.962)
+scale = Vector2(0.515097, 0.772509)
 
 [connection signal="shape" from="shoter" to="." method="_on_shoter_shape"]
