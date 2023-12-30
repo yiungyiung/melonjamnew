@@ -1,11 +1,10 @@
 extends RigidBody2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _process(delta: float) -> void:
+	var col=get_colliding_bodies()
+	for i in col:
+		if i.is_in_group("player"):
+			i.health-=10
+			print(i.health)
+			queue_free()

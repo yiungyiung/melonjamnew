@@ -1,6 +1,7 @@
 extends Area2D
 
 var object = preload("res://scenes/bar.tscn")
+var stones = preload("res://proto.tscn")
 var max = 9
 var spawned = 0
 var area: CollisionShape2D
@@ -12,6 +13,7 @@ func _ready():
 	area = $CollisionShape2D
 	generateSpawnPoints()
 	spawnBars()
+	farbar()
 
 # Generate spawn points within the area, avoiding collisions
 func generateSpawnPoints():
@@ -53,3 +55,17 @@ func spawnBars():
 		spawner.scale.x = randf_range(0.3, 0.5)
 		add_child(spawner)
 		spawned += 1
+func farbar():
+	var farthestDistance = 0.0
+	var farpos: Vector2
+
+	for spawner in get_children():
+		var distance = spawner.position.distance_to($"../../Player".global_position)
+		if distance > farthestDistance:
+			farthestDistance = distance
+			farpos = spawner.position
+	
+	var spawned = stones.instantiate()
+	spawned.position= farpos
+	add_child(spawned)
+	print("Farthest bar from player:", farpos)

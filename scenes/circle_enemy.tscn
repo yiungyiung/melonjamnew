@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbrm42rqwu2u8"]
+[gd_scene load_steps=4 format=3 uid="uid://dbrm42rqwu2u8"]
 
+[ext_resource type="Script" path="res://scripts/circleEnemy.gd" id="1_0gg8o"]
 [ext_resource type="Texture2D" uid="uid://dcyl4db1p8h5v" path="res://sprites/circle enemy.png" id="1_8q3na"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qeq67"]
@@ -11,6 +12,7 @@ collision_mask = 71
 max_contacts_reported = 5
 contact_monitor = true
 linear_velocity = Vector2(100, 2.08165e-12)
+script = ExtResource("1_0gg8o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.3, 0.3)

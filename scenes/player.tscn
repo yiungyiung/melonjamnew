@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdsje6ihwxppl"]
+[gd_scene load_steps=7 format=3 uid="uid://bdsje6ihwxppl"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_oyv4v"]
 [ext_resource type="Texture2D" uid="uid://bftc1vjk0ssfy" path="res://sprites/c1.png" id="2_3oj28"]
+[ext_resource type="PackedScene" uid="uid://sqvn0okvdpt0" path="res://liner.tscn" id="2_qpefy"]
 [ext_resource type="Script" path="res://scripts/charmshooter.gd" id="3_fc26t"]
 [ext_resource type="Texture2D" uid="uid://caog1c5tfe8d6" path="res://sprites/shoot.png" id="4_jqeji"]
 
@@ -14,6 +15,8 @@ collision_mask = 12
 floor_max_angle = 1.25664
 script = ExtResource("1_oyv4v")
 metadata/_edit_horizontal_guides_ = [-70.0]
+
+[node name="Trail" parent="." instance=ExtResource("2_qpefy")]
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(0, -53)
