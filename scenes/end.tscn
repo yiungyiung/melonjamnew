@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://dws4f4k6a2liq"]
+[gd_scene load_steps=16 format=3 uid="uid://dws4f4k6a2liq"]
 
+[ext_resource type="Script" path="res://scenes/whyend.gd" id="1_qqoyi"]
 [ext_resource type="Script" path="res://scripts/ParallaxBackground.gd" id="1_u617y"]
 [ext_resource type="Texture2D" uid="uid://vldt12avid0m" path="res://sprites/l1.png" id="2_m8od6"]
 [ext_resource type="Texture2D" uid="uid://cxgotbeauquyn" path="res://sprites/l2.png" id="3_dym1f"]
@@ -9,8 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://efly4byri7j5" path="res://sprites/l6.png" id="7_nxu6k"]
 [ext_resource type="Texture2D" uid="uid://b5fbkgtxgxo1k" path="res://sprites/l7.png" id="8_nv2q6"]
 [ext_resource type="Texture2D" uid="uid://db0fqauctxqw1" path="res://sprites/r.png" id="9_k8355"]
-[ext_resource type="Script" path="res://scripts/end.gd" id="10_miais"]
 [ext_resource type="FontFile" uid="uid://c6r3ge5k6rlsq" path="res://sprites/Cosmonaut.ttf" id="11_2qvp7"]
+[ext_resource type="Texture2D" uid="uid://yg0a6j247bhw" path="res://sprites/rub.png" id="12_dt8rh"]
+[ext_resource type="AudioStream" uid="uid://r8e6l2y88077" path="res://sounds/button.wav" id="13_vj4di"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2q7wd"]
 font = ExtResource("11_2qvp7")
@@ -18,9 +20,10 @@ font_size = 120
 
 [sub_resource type="LabelSettings" id="LabelSettings_lw3pg"]
 font = ExtResource("11_2qvp7")
-font_size = 70
+font_size = 90
 
 [node name="level" type="Node2D"]
+script = ExtResource("1_qqoyi")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource("1_u617y")
@@ -110,7 +113,11 @@ offset_bottom = 1083.0
 position = Vector2(1351, 779)
 scale = Vector2(0.948333, 0.836703)
 texture = ExtResource("9_k8355")
-script = ExtResource("10_miais")
+
+[node name="Rub" type="Sprite2D" parent="Control/end"]
+position = Vector2(314.236, -133.859)
+scale = Vector2(0.2, 0.226)
+texture = ExtResource("12_dt8rh")
 
 [node name="play" type="Button" parent="Control/end"]
 offset_left = -183.48
@@ -135,34 +142,48 @@ theme_override_font_sizes/font_size = 60
 text = "Home"
 
 [node name="name" type="Label" parent="Control/end"]
-offset_left = -479.0
-offset_top = -535.0
-offset_right = 489.0
-offset_bottom = -226.0
+offset_left = -482.953
+offset_top = -643.0
+offset_right = 485.047
+offset_bottom = -334.0
 text = "Game over"
 label_settings = SubResource("LabelSettings_2q7wd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Gameover" type="Label" parent="Control/end"]
+offset_left = -420.738
+offset_top = -378.868
+offset_right = 472.262
+offset_bottom = -207.868
+text = "Charmed to death"
+label_settings = SubResource("LabelSettings_lw3pg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="score" type="Label" parent="Control/end"]
-offset_left = -307.909
-offset_top = -192.422
-offset_right = 280.091
-offset_bottom = -95.4219
+offset_left = -600.0
+offset_top = -173.299
+offset_right = -12.0002
+offset_bottom = -76.2992
 text = "score :"
 label_settings = SubResource("LabelSettings_lw3pg")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="count" type="Label" parent="Control/end"]
-offset_left = -307.909
-offset_top = -49.0019
-offset_right = 285.091
-offset_bottom = 47.9981
-text = "Crystal count: "
+offset_left = 402.812
+offset_top = -173.299
+offset_right = 995.812
+offset_bottom = -76.2993
+text = "X2"
 label_settings = SubResource("LabelSettings_lw3pg")
-horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_vj4di")
+
+[connection signal="button_down" from="Control/end/play" to="." method="_on_play_button_down"]
 [connection signal="button_down" from="Control/end/play" to="Control/end" method="_on_play_button_down"]
+[connection signal="pressed" from="Control/end/home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="Control/end/home" to="Control/end" method="_on_home_pressed"]

@@ -1,0 +1,114 @@
+[gd_scene load_steps=12 format=3 uid="uid://cbslggxdh5lnh"]
+
+[ext_resource type="Script" path="res://scripts/Paralla.gd" id="1_ttub3"]
+[ext_resource type="Texture2D" uid="uid://vldt12avid0m" path="res://sprites/l1.png" id="2_p3cyx"]
+[ext_resource type="Texture2D" uid="uid://cxgotbeauquyn" path="res://sprites/l2.png" id="3_r1842"]
+[ext_resource type="Texture2D" uid="uid://b3q3s712aiqc0" path="res://sprites/l3.png" id="4_4ubci"]
+[ext_resource type="Texture2D" uid="uid://l320gea0g3by" path="res://sprites/l4.png" id="5_5cyl3"]
+[ext_resource type="Texture2D" uid="uid://cti8e4igqsqnv" path="res://sprites/l5.png" id="6_rwnq2"]
+[ext_resource type="Texture2D" uid="uid://efly4byri7j5" path="res://sprites/l6.png" id="7_g27rm"]
+[ext_resource type="Texture2D" uid="uid://b5fbkgtxgxo1k" path="res://sprites/l7.png" id="8_w5sa3"]
+[ext_resource type="Texture2D" uid="uid://db0fqauctxqw1" path="res://sprites/r.png" id="9_23wct"]
+[ext_resource type="FontFile" uid="uid://c6r3ge5k6rlsq" path="res://sprites/Cosmonaut.ttf" id="19_mkqgv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7u7qk"]
+font = ExtResource("19_mkqgv")
+font_size = 300
+
+[node name="level" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2(0, -13)
+transform = Transform2D(1, 0, 0, 1, 0, -13)
+script = ExtResource("1_ttub3")
+
+[node name="layer1" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -442)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer1"]
+position = Vector2(1966, 793)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("2_p3cyx")
+
+[node name="layer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -438)
+motion_scale = Vector2(-0.8, -0.8)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer2"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("3_r1842")
+
+[node name="layer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -438)
+motion_scale = Vector2(1.5, 1.5)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer3"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("4_4ubci")
+
+[node name="layer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -434)
+motion_scale = Vector2(-0.5, -0.5)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer4"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("5_5cyl3")
+
+[node name="layer5" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-781, -434)
+motion_scale = Vector2(3, 3)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer5"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("6_rwnq2")
+
+[node name="layer6" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-781, -438)
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer6"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("7_g27rm")
+
+[node name="layer7" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -442)
+motion_scale = Vector2(-1, -1)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer7"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("8_w5sa3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(593, 351)
+zoom = Vector2(0.425, 0.425)
+
+[node name="R" type="Sprite2D" parent="."]
+position = Vector2(593, 409)
+texture = ExtResource("9_23wct")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -164.0
+offset_right = 1152.0
+offset_bottom = 774.0
+
+[node name="Label" type="Label" parent="Control"]
+offset_right = 1193.0
+offset_bottom = 1001.0
+label_settings = SubResource("LabelSettings_7u7qk")
+horizontal_alignment = 1
+vertical_alignment = 1

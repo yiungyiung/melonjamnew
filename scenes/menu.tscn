@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bjpee1bogpi12"]
+[gd_scene load_steps=23 format=3 uid="uid://bjpee1bogpi12"]
 
 [ext_resource type="Script" path="res://scripts/ParallaxBackground.gd" id="1_xedx6"]
 [ext_resource type="Texture2D" uid="uid://vldt12avid0m" path="res://sprites/l1.png" id="2_h77p3"]
@@ -12,10 +12,13 @@
 [ext_resource type="Script" path="res://scripts/menu.gd" id="10_8r0c7"]
 [ext_resource type="FontFile" uid="uid://c6r3ge5k6rlsq" path="res://sprites/Cosmonaut.ttf" id="11_u54pt"]
 [ext_resource type="Texture2D" uid="uid://cq4w3eil5e7hc" path="res://sprites/ss1.png" id="12_jyorx"]
+[ext_resource type="Texture2D" uid="uid://bftc1vjk0ssfy" path="res://sprites/c1.png" id="12_ovafn"]
+[ext_resource type="Texture2D" uid="uid://bgsa2agrm4yt7" path="res://sprites/triangle enemy.png" id="13_fruvq"]
 [ext_resource type="Texture2D" uid="uid://dob4ru6xyo5si" path="res://sprites/ss3.png" id="13_hhtrh"]
 [ext_resource type="Texture2D" uid="uid://b2y7lb4y0h1cv" path="res://sprites/ss8.png" id="14_ksspf"]
 [ext_resource type="Texture2D" uid="uid://dam3361xuqbim" path="res://sprites/ss7.png" id="15_rkrre"]
 [ext_resource type="Texture2D" uid="uid://b2kc8rshp1r2" path="res://sprites/ss2.png" id="16_g82pk"]
+[ext_resource type="AudioStream" uid="uid://r8e6l2y88077" path="res://sounds/button.wav" id="19_6m15v"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2q7wd"]
 font = ExtResource("11_u54pt")
@@ -139,18 +142,28 @@ pivot_offset = Vector2(3136.23, 886.814)
 theme_override_colors/font_color = Color(0.74902, 0.376471, 0.129412, 1)
 theme_override_fonts/font = ExtResource("11_u54pt")
 theme_override_font_sizes/font_size = 60
-text = "TUTORIAL"
+text = "How to Play"
 
 [node name="name" type="Label" parent="Control/menu"]
-offset_left = -479.0
-offset_top = -535.0
-offset_right = 489.0
-offset_bottom = -176.0
+offset_left = -526.979
+offset_top = -535.598
+offset_right = 441.021
+offset_bottom = -176.598
 text = "ESCAPE
 CHARMIST"
 label_settings = SubResource("LabelSettings_2q7wd")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="C1" type="Sprite2D" parent="Control/menu"]
+position = Vector2(-467.663, -406.954)
+scale = Vector2(1.05448, 1.19517)
+texture = ExtResource("12_ovafn")
+
+[node name="TriangleEnemy" type="Sprite2D" parent="Control/menu"]
+position = Vector2(461.336, -392.612)
+scale = Vector2(0.632689, 0.7171)
+texture = ExtResource("13_fruvq")
 
 [node name="tutorial" type="Sprite2D" parent="Control"]
 visible = false
@@ -165,7 +178,6 @@ texture = ExtResource("9_uuelm")
 
 [node name="tutorial3" type="Sprite2D" parent="Control/tutorial"]
 position = Vector2(3325, 28.5778)
-scale = Vector2(1, 1)
 texture = ExtResource("9_uuelm")
 
 [node name="Label" type="Label" parent="Control/tutorial"]
@@ -273,6 +285,9 @@ theme_override_fonts/font = ExtResource("11_u54pt")
 theme_override_font_sizes/font_size = 60
 disabled = true
 text = "PLAY"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_6m15v")
 
 [connection signal="button_down" from="Control/menu/play" to="Control/menu" method="_on_play_button_down"]
 [connection signal="button_down" from="Control/menu/tut" to="Control/menu" method="_on_tut_button_down"]

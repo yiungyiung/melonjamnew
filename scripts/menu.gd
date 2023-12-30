@@ -1,5 +1,5 @@
 extends Sprite2D
-
+var starter=preload("res://scenes/levelstarter.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,10 +12,15 @@ func _process(delta):
 
 
 func _on_play_button_down():
-	pass # Replace with function body.
+	$"../../AudioStreamPlayer2D".playing=true
+	var sp=starter.instantiate()
+	get_tree().get_root().add_child(sp)
+	$"../..".queue_free()
+	 # Replace with function body.
 
 
 func _on_tut_button_down():
+	$"../../AudioStreamPlayer2D".playing=true
 	$".".visible=false
 	$play.disabled=true
 	$tut.disabled=true

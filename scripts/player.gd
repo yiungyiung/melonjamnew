@@ -3,6 +3,7 @@ extends CharacterBody2D
 #class_name Player
 signal health_changed
 
+var endscene=preload("res://scenes/end.tscn")
 
 const SPEED = 40000.0
 const JUMP_VELOCITY = -60000.0
@@ -61,7 +62,15 @@ func redhealth(val : int):
 		health_changed.emit()
 		
 	else:
-		health=0
+		var spaner=endscene.instantiate()
+		spaner.gameover="Charmed to Death"
+		spaner.score=score
+		spaner.charm=crystalcount
+		get_tree().get_root().get_node("main").add_child(spaner)
+		var object=get_tree().get_nodes_in_group("damagers")
+		for i in object:
+			i.queue_free()
+		$"..".queue_free()
 		
 func increasescore(val : int):
 	score+=val

@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctuw26n4r3y16"]
+[gd_scene load_steps=3 format=3 uid="uid://ctuw26n4r3y16"]
 
-[ext_resource type="PackedScene" uid="uid://cdayf2owgnwli" path="res://scenes/level2.tscn" id="1_b5ji4"]
+[ext_resource type="PackedScene" uid="uid://bjpee1bogpi12" path="res://scenes/menu.tscn" id="1_qm41s"]
+[ext_resource type="AudioStream" uid="uid://btxac3v7fhqof" path="res://sounds/cruising-down-8bit-lane-159615.mp3" id="2_aq31b"]
 
 [node name="main" type="Node2D"]
 
-[node name="level" parent="." instance=ExtResource("1_b5ji4")]
+[node name="level" parent="." instance=ExtResource("1_qm41s")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_aq31b")
+volume_db = -20.0
+autoplay = true

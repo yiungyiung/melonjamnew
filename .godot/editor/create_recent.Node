@@ -1,7 +1,9 @@
+AudioStreamPlayer2D
+AudioListener2D
 Label
+Control
 Button
 Sprite2D
-Control
 VisibleOnScreenNotifier2D
 AudioStreamPlayer
 TextureProgressBar
@@ -10,5 +12,3 @@ Panel
 CanvasLayer
 Timer
 CPUParticles2D
-GPUParticles2D
-CollisionShape2D
