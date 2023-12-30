@@ -1,0 +1,168 @@
+[gd_scene load_steps=14 format=3 uid="uid://dws4f4k6a2liq"]
+
+[ext_resource type="Script" path="res://scripts/ParallaxBackground.gd" id="1_u617y"]
+[ext_resource type="Texture2D" uid="uid://vldt12avid0m" path="res://sprites/l1.png" id="2_m8od6"]
+[ext_resource type="Texture2D" uid="uid://cxgotbeauquyn" path="res://sprites/l2.png" id="3_dym1f"]
+[ext_resource type="Texture2D" uid="uid://b3q3s712aiqc0" path="res://sprites/l3.png" id="4_8qvtb"]
+[ext_resource type="Texture2D" uid="uid://l320gea0g3by" path="res://sprites/l4.png" id="5_a1ck0"]
+[ext_resource type="Texture2D" uid="uid://cti8e4igqsqnv" path="res://sprites/l5.png" id="6_o3b8q"]
+[ext_resource type="Texture2D" uid="uid://efly4byri7j5" path="res://sprites/l6.png" id="7_nxu6k"]
+[ext_resource type="Texture2D" uid="uid://b5fbkgtxgxo1k" path="res://sprites/l7.png" id="8_nv2q6"]
+[ext_resource type="Texture2D" uid="uid://db0fqauctxqw1" path="res://sprites/r.png" id="9_k8355"]
+[ext_resource type="Script" path="res://scripts/end.gd" id="10_miais"]
+[ext_resource type="FontFile" uid="uid://c6r3ge5k6rlsq" path="res://sprites/Cosmonaut.ttf" id="11_2qvp7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2q7wd"]
+font = ExtResource("11_2qvp7")
+font_size = 120
+
+[sub_resource type="LabelSettings" id="LabelSettings_lw3pg"]
+font = ExtResource("11_2qvp7")
+font_size = 70
+
+[node name="level" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_u617y")
+
+[node name="layer1" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -442)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer1"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("2_m8od6")
+
+[node name="layer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -442)
+motion_scale = Vector2(-0.8, -0.8)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer2"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("3_dym1f")
+
+[node name="layer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -442)
+motion_scale = Vector2(1.5, 1.5)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer3"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("4_8qvtb")
+
+[node name="layer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -442)
+motion_scale = Vector2(-0.5, -0.5)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer4"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("5_a1ck0")
+
+[node name="layer5" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -442)
+motion_scale = Vector2(3, 3)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer5"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("6_o3b8q")
+
+[node name="layer6" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -442)
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer6"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("7_nxu6k")
+
+[node name="layer7" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -442)
+motion_scale = Vector2(-1, -1)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer7"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("8_nv2q6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(570, 320)
+zoom = Vector2(0.425, 0.425)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -781.0
+offset_top = -438.0
+offset_right = 1926.0
+offset_bottom = 1083.0
+
+[node name="end" type="Sprite2D" parent="Control"]
+position = Vector2(1351, 779)
+scale = Vector2(0.948333, 0.836703)
+texture = ExtResource("9_k8355")
+script = ExtResource("10_miais")
+
+[node name="play" type="Button" parent="Control/end"]
+offset_left = -183.48
+offset_top = 136.249
+offset_right = 175.52
+offset_bottom = 269.249
+pivot_offset = Vector2(3136.23, 886.814)
+theme_override_colors/font_color = Color(0.74902, 0.376471, 0.129412, 1)
+theme_override_fonts/font = ExtResource("11_2qvp7")
+theme_override_font_sizes/font_size = 60
+text = "PLAY"
+
+[node name="home" type="Button" parent="Control/end"]
+offset_left = -183.48
+offset_top = 339.428
+offset_right = 185.52
+offset_bottom = 472.428
+pivot_offset = Vector2(3136.23, 886.814)
+theme_override_colors/font_color = Color(0.74902, 0.376471, 0.129412, 1)
+theme_override_fonts/font = ExtResource("11_2qvp7")
+theme_override_font_sizes/font_size = 60
+text = "Home"
+
+[node name="name" type="Label" parent="Control/end"]
+offset_left = -479.0
+offset_top = -535.0
+offset_right = 489.0
+offset_bottom = -226.0
+text = "Game over"
+label_settings = SubResource("LabelSettings_2q7wd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="score" type="Label" parent="Control/end"]
+offset_left = -307.909
+offset_top = -192.422
+offset_right = 280.091
+offset_bottom = -95.4219
+text = "score :"
+label_settings = SubResource("LabelSettings_lw3pg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="count" type="Label" parent="Control/end"]
+offset_left = -307.909
+offset_top = -49.0019
+offset_right = 285.091
+offset_bottom = 47.9981
+text = "Crystal count: "
+label_settings = SubResource("LabelSettings_lw3pg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="Control/end/play" to="Control/end" method="_on_play_button_down"]
+[connection signal="pressed" from="Control/end/home" to="Control/end" method="_on_home_pressed"]

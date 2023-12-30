@@ -1,0 +1,279 @@
+[gd_scene load_steps=20 format=3 uid="uid://bjpee1bogpi12"]
+
+[ext_resource type="Script" path="res://scripts/ParallaxBackground.gd" id="1_xedx6"]
+[ext_resource type="Texture2D" uid="uid://vldt12avid0m" path="res://sprites/l1.png" id="2_h77p3"]
+[ext_resource type="Texture2D" uid="uid://cxgotbeauquyn" path="res://sprites/l2.png" id="3_sh8ej"]
+[ext_resource type="Texture2D" uid="uid://b3q3s712aiqc0" path="res://sprites/l3.png" id="4_kc1ly"]
+[ext_resource type="Texture2D" uid="uid://l320gea0g3by" path="res://sprites/l4.png" id="5_nibov"]
+[ext_resource type="Texture2D" uid="uid://cti8e4igqsqnv" path="res://sprites/l5.png" id="6_pmto4"]
+[ext_resource type="Texture2D" uid="uid://efly4byri7j5" path="res://sprites/l6.png" id="7_aqikl"]
+[ext_resource type="Texture2D" uid="uid://b5fbkgtxgxo1k" path="res://sprites/l7.png" id="8_k2hwk"]
+[ext_resource type="Texture2D" uid="uid://db0fqauctxqw1" path="res://sprites/r.png" id="9_uuelm"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="10_8r0c7"]
+[ext_resource type="FontFile" uid="uid://c6r3ge5k6rlsq" path="res://sprites/Cosmonaut.ttf" id="11_u54pt"]
+[ext_resource type="Texture2D" uid="uid://cq4w3eil5e7hc" path="res://sprites/ss1.png" id="12_jyorx"]
+[ext_resource type="Texture2D" uid="uid://dob4ru6xyo5si" path="res://sprites/ss3.png" id="13_hhtrh"]
+[ext_resource type="Texture2D" uid="uid://b2y7lb4y0h1cv" path="res://sprites/ss8.png" id="14_ksspf"]
+[ext_resource type="Texture2D" uid="uid://dam3361xuqbim" path="res://sprites/ss7.png" id="15_rkrre"]
+[ext_resource type="Texture2D" uid="uid://b2kc8rshp1r2" path="res://sprites/ss2.png" id="16_g82pk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2q7wd"]
+font = ExtResource("11_u54pt")
+font_size = 120
+
+[sub_resource type="LabelSettings" id="LabelSettings_jeul0"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_3x4fb"]
+font_size = 50
+
+[node name="level" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_xedx6")
+
+[node name="layer1" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -442)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer1"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("2_h77p3")
+
+[node name="layer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -442)
+motion_scale = Vector2(-0.8, -0.8)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer2"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("3_sh8ej")
+
+[node name="layer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -442)
+motion_scale = Vector2(1.5, 1.5)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer3"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("4_kc1ly")
+
+[node name="layer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -442)
+motion_scale = Vector2(-0.5, -0.5)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer4"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("5_nibov")
+
+[node name="layer5" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -442)
+motion_scale = Vector2(3, 3)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer5"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("6_pmto4")
+
+[node name="layer6" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -442)
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer6"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("7_aqikl")
+
+[node name="layer7" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-785, -442)
+motion_scale = Vector2(-1, -1)
+motion_mirroring = Vector2(3905, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer7"]
+position = Vector2(1959, 764.5)
+scale = Vector2(1.57407, 1.4625)
+texture = ExtResource("8_k2hwk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(570, 320)
+zoom = Vector2(0.425, 0.425)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -781.0
+offset_top = -438.0
+offset_right = 1926.0
+offset_bottom = 1083.0
+
+[node name="menu" type="Sprite2D" parent="Control"]
+position = Vector2(1351, 779)
+scale = Vector2(0.948333, 0.836703)
+texture = ExtResource("9_uuelm")
+script = ExtResource("10_8r0c7")
+
+[node name="play" type="Button" parent="Control/menu"]
+offset_left = -305.8
+offset_top = 66.9294
+offset_right = 314.2
+offset_bottom = 199.929
+pivot_offset = Vector2(3136.23, 886.814)
+theme_override_colors/font_color = Color(0.74902, 0.376471, 0.129412, 1)
+theme_override_fonts/font = ExtResource("11_u54pt")
+theme_override_font_sizes/font_size = 60
+text = "PLAY"
+
+[node name="tut" type="Button" parent="Control/menu"]
+offset_left = -305.8
+offset_top = 289.231
+offset_right = 314.2
+offset_bottom = 422.231
+pivot_offset = Vector2(3136.23, 886.814)
+theme_override_colors/font_color = Color(0.74902, 0.376471, 0.129412, 1)
+theme_override_fonts/font = ExtResource("11_u54pt")
+theme_override_font_sizes/font_size = 60
+text = "TUTORIAL"
+
+[node name="name" type="Label" parent="Control/menu"]
+offset_left = -479.0
+offset_top = -535.0
+offset_right = 489.0
+offset_bottom = -176.0
+text = "ESCAPE
+CHARMIST"
+label_settings = SubResource("LabelSettings_2q7wd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="tutorial" type="Sprite2D" parent="Control"]
+visible = false
+position = Vector2(494, 732)
+scale = Vector2(0.48, 0.909798)
+texture = ExtResource("9_uuelm")
+
+[node name="tutorial2" type="Sprite2D" parent="Control/tutorial"]
+position = Vector2(1664.58, -109.914)
+scale = Vector2(1, 0.565812)
+texture = ExtResource("9_uuelm")
+
+[node name="tutorial3" type="Sprite2D" parent="Control/tutorial"]
+position = Vector2(3325, 28.5778)
+scale = Vector2(1, 1)
+texture = ExtResource("9_uuelm")
+
+[node name="Label" type="Label" parent="Control/tutorial"]
+offset_left = -479.167
+offset_top = -568.258
+offset_right = 439.833
+offset_bottom = -472.258
+text = "Aim with Mouse"
+label_settings = SubResource("LabelSettings_jeul0")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/tutorial/Label"]
+position = Vector2(483.333, 301.166)
+scale = Vector2(2.5612, 1.96288)
+texture = ExtResource("12_jyorx")
+
+[node name="Label4" type="Label" parent="Control/tutorial"]
+offset_left = 2833.33
+offset_top = -539.68
+offset_right = 3752.33
+offset_bottom = -443.68
+text = "kill enemies"
+label_settings = SubResource("LabelSettings_jeul0")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/tutorial/Label4"]
+position = Vector2(488.459, 311.053)
+scale = Vector2(1.67956, 1.01463)
+texture = ExtResource("13_hhtrh")
+
+[node name="Label5" type="Label" parent="Control/tutorial"]
+offset_left = 2833.33
+offset_top = 113.212
+offset_right = 3752.33
+offset_bottom = 209.212
+text = "Collect stones"
+label_settings = SubResource("LabelSettings_jeul0")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/tutorial/Label5"]
+position = Vector2(487.5, 305.253)
+scale = Vector2(2.89471, 1.34741)
+texture = ExtResource("14_ksspf")
+
+[node name="Label3" type="Label" parent="Control/tutorial"]
+offset_left = 1181.25
+offset_top = -413.279
+offset_right = 2100.25
+offset_bottom = -272.279
+text = "Move with arrows
+jump with spacebar"
+label_settings = SubResource("LabelSettings_jeul0")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/tutorial/Label3"]
+position = Vector2(495.833, 369.313)
+scale = Vector2(1.37761, 0.884538)
+texture = ExtResource("15_rkrre")
+
+[node name="Label2" type="Label" parent="Control/tutorial"]
+offset_left = -479.167
+offset_top = -43.9657
+offset_right = 439.833
+offset_bottom = 52.0343
+text = "Click Once to Shoot"
+label_settings = SubResource("LabelSettings_jeul0")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/tutorial/Label2"]
+position = Vector2(470.833, 289.075)
+scale = Vector2(2.37692, 2.07725)
+texture = ExtResource("16_g82pk")
+
+[node name="Label" type="Label" parent="Control/tutorial/Label2"]
+layout_mode = 0
+offset_left = -54.1667
+offset_top = 483.624
+offset_right = 1008.83
+offset_bottom = 696.624
+text = "Hold left mouse button to shoot fast
+Click Twice to Teleport"
+label_settings = SubResource("LabelSettings_3x4fb")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="play" type="Button" parent="Control/tutorial"]
+offset_left = 1314.58
+offset_top = 372.61
+offset_right = 1934.58
+offset_bottom = 505.61
+pivot_offset = Vector2(3136.23, 886.814)
+theme_override_colors/font_color = Color(0.74902, 0.376471, 0.129412, 1)
+theme_override_fonts/font = ExtResource("11_u54pt")
+theme_override_font_sizes/font_size = 60
+disabled = true
+text = "PLAY"
+
+[connection signal="button_down" from="Control/menu/play" to="Control/menu" method="_on_play_button_down"]
+[connection signal="button_down" from="Control/menu/tut" to="Control/menu" method="_on_tut_button_down"]
+[connection signal="button_down" from="Control/tutorial/play" to="Control/menu" method="_on_play_button_down"]
