@@ -13,3 +13,4 @@ res://scripts/player.gd
 res://scripts/charmshooter.gd
 res://scripts/charmtoshot.gd
 res://stones.gd
+res://scenes/main.tscn
