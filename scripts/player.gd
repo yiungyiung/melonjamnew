@@ -4,8 +4,8 @@ extends CharacterBody2D
 signal health_changed
 
 
-const SPEED = 900.0
-const JUMP_VELOCITY = -1000.0
+const SPEED = 40000.0
+const JUMP_VELOCITY = -60000.0
 signal enemyspwan(index)
 @export var neggrav: int
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -16,6 +16,7 @@ var score=0
 var teleport
 var shootsound
 var expo
+var MAX_ACCELERATION = 20000.0
 func _ready() -> void:
 	teleport=$"../teleport"
 	shootsound=$"../shoot"
@@ -24,7 +25,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.y += neggrav * gravity * delta
+		velocity += Vector2.DOWN*neggrav * gravity*delta
 	if is_on_floor():
 		var normal= get_floor_normal()
 		rotation=normal.angle()+deg_to_rad(90)
@@ -35,7 +36,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and (is_on_ceiling() || is_on_floor()):
 		$"../Jump".playing=true
 		var directions = global_transform.y
-		velocity = directions * JUMP_VELOCITY
+		velocity += directions * JUMP_VELOCITY*delta
 	
 	var direction := Input.get_axis("left", "right")
 	
@@ -44,8 +45,12 @@ func _physics_process(delta: float) -> void:
 			$CollisionShape2D/Icon.flip_h=false
 		if(direction==1):
 			$CollisionShape2D/Icon.flip_h=true
-		velocity.x = direction * SPEED
-	velocity.x-=velocity.x*delta*2
+		var target_velocity = global_transform.x *direction * SPEED*delta
+		var acceleration = target_velocity.x - velocity.x
+		if abs(acceleration) > MAX_ACCELERATION:
+			acceleration = sign(acceleration) * MAX_ACCELERATION
+		velocity.x += acceleration
+	velocity.x -= velocity.x * delta * 2
 
 	move_and_slide()
 

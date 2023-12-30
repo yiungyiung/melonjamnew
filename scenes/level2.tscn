@@ -67,7 +67,6 @@ outline_size = 12
 outline_color = Color(0.776471, 0.188235, 0.580392, 1)
 
 [node name="level" type="Node2D"]
-position = Vector2(0, 34)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource("1_5vu0h")
