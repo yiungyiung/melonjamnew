@@ -16,4 +16,4 @@ func _process(delta: float) -> void:
 			queue_free()
 	var direction = (player.global_position- global_position).normalized()
 	direction.y = 0
-	apply_central_force(direction*80)
+	apply_central_impulse(direction*20)

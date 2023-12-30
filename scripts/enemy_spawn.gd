@@ -4,7 +4,7 @@ var circle_enemy= preload("res://scenes/circle_enemy.tscn")
 var triangle_enemy=preload("res://scenes/triangle_enemy.tscn")
 var square_enemy=preload("res://scenes/square_enemy.tscn")
 var player
-var objectToSpawn = preload("res://scenes/rock2.tscn")
+var objectToSpawn = preload("res://rock.tscn")
 var spawnTimer = 8.0  
 var deleteTimer = 2.0  
 var timeSinceLastSpawn = 0.0
