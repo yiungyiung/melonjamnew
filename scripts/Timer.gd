@@ -53,19 +53,20 @@ func spawnBars():
 		
 		spawner.position = spawn_positions[i]
 		spawner.scale.x = randf_range(0.3, 0.5)
-		add_child(spawner)
+		$"../platforms".add_child(spawner)
 		spawned += 1
 func farbar():
 	var farthestDistance = 0.0
 	var farpos: Vector2
-
-	for spawner in get_children():
-		var distance = spawner.position.distance_to($"../../Player".global_position)
-		if distance > farthestDistance:
-			farthestDistance = distance
-			farpos = spawner.position
-	
+	var children = $"../platforms".get_children()
+	children.sort_custom(compare_distance)
+	farpos = children[randi_range(int(children.size()/2),children.size())-1].position
 	var spawned = stones.instantiate()
-	spawned.position= farpos
-	add_child(spawned)
-	print("Farthest bar from player:", farpos)
+	spawned.position= Vector2(farpos.x,farpos.y-15)
+	spawned.manager=$"."
+	call_deferred("add_child", spawned)
+func compare_distance(a, b):
+	var player_pos = $"../../Player".global_position
+	var dist_a = a.global_position.distance_to(player_pos)
+	var dist_b = b.global_position.distance_to(player_pos)
+	return dist_a < dist_b

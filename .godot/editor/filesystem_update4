@@ -13,3 +13,6 @@ res://scenes/Line2D.gd
 res://scripts/circleEnemy.gd
 res://liner.tscn
 res://scripts/Timer.gd
+res://scripts/charmshooter.gd
+res://stones.gd
+res://scripts/player.gd

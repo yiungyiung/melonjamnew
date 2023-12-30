@@ -49,7 +49,7 @@ func _process(delta: float) -> void:
 				currentcharm=nextcharm
 				nextcharm=randi()%charms.size()
 				spawner.addimpulse(global_position.direction_to(get_global_mouse_position()),hold_value*20)
-				spawner.position=$Bar/Marker2D.global_position
+				spawner.position=$Marker2D.global_position
 				var root = get_tree().get_root()
 				lastcharm=spawner
 				root.add_child(spawner)

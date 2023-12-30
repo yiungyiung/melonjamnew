@@ -36,15 +36,16 @@ texture = ExtResource("2_3oj28")
 position = Vector2(9.53674e-07, 0)
 script = ExtResource("3_fc26t")
 
+[node name="Marker2D" type="Marker2D" parent="shoter"]
+position = Vector2(64.2857, 2.38419e-07)
+rotation = 3.14159
+scale = Vector2(0.114, -0.935416)
+
 [node name="Bar" type="Sprite2D" parent="shoter"]
 position = Vector2(-53.9736, -73.837)
 rotation = 3.14159
 scale = Vector2(0.221317, -1.21088)
 texture = ExtResource("4_jqeji")
 offset = Vector2(-554.175, 59.915)
-
-[node name="Marker2D" type="Marker2D" parent="shoter/Bar"]
-position = Vector2(-844.175, 57.962)
-scale = Vector2(0.515097, 0.772509)
 
 [connection signal="shape" from="shoter" to="." method="_on_shoter_shape"]

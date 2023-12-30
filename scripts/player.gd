@@ -7,6 +7,7 @@ signal enemyspwan(index)
 @export var neggrav: int
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 var health=100
+var crystalcount=0
 
 
 func _physics_process(delta: float) -> void:
