@@ -1,14 +1,19 @@
 extends CharacterBody2D
 
+#class_name Player
+signal health_changed
+
 
 const SPEED = 900.0
 const JUMP_VELOCITY = -1000.0
 signal enemyspwan(index)
 @export var neggrav: int
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
-var health=100
+@export var health=100
+@onready var currentHealth:int=health
 var crystalcount=0
 var score=0
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -39,11 +44,18 @@ func _physics_process(delta: float) -> void:
 func redhealth(val : int):
 	if(health>0):
 		health-=val
+		
+		health_changed.emit()
+		
 	else:
 		health=0
+		
 func increasescore(val : int):
 	score+=val
+	
 	print(score)
 func _on_shoter_shape(currentcharm):
 	enemyspwan.emit(currentcharm)
+
+	
 	

@@ -25,6 +25,8 @@ func particle(color):
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.increasescore(50)
+		#print(body.crystalcount)
+		body.crystalcount+=1
 		print(body.crystalcount)
 		manager.farbar()
 		particle(Color.DARK_GOLDENROD)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cdayf2owgnwli"]
+[gd_scene load_steps=30 format=3 uid="uid://cdayf2owgnwli"]
 
 [ext_resource type="Script" path="res://scripts/ParallaxBackground.gd" id="1_5vu0h"]
 [ext_resource type="Script" path="res://scripts/levelsqaure.gd" id="1_rxekk"]
@@ -14,6 +14,12 @@
 [ext_resource type="Texture2D" uid="uid://b5fbkgtxgxo1k" path="res://sprites/l7.png" id="8_534h8"]
 [ext_resource type="Texture2D" uid="uid://dav1q5aguwfr4" path="res://sprites/boxii.png" id="10_xbtc8"]
 [ext_resource type="Shader" path="res://scripts/player.gdshader" id="15_3j416"]
+[ext_resource type="Script" path="res://scenes/Control.gd" id="15_a0p8a"]
+[ext_resource type="Script" path="res://scenes/ProgressBar.gd" id="15_q3svu"]
+[ext_resource type="Texture2D" uid="uid://cg3dku8mapohm" path="res://sprites/back.png" id="15_wm8bh"]
+[ext_resource type="Texture2D" uid="uid://cisdyl1giqc4j" path="res://sprites/green.png" id="16_eq1cr"]
+[ext_resource type="FontFile" uid="uid://c6r3ge5k6rlsq" path="res://sprites/Cosmonaut.ttf" id="17_doqs5"]
+[ext_resource type="Texture2D" uid="uid://yg0a6j247bhw" path="res://sprites/rub.png" id="20_olxx6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbnsf"]
 size = Vector2(1696.53, 61)
@@ -38,7 +44,22 @@ shader = ExtResource("15_3j416")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_modifier = 1.0
 
+[sub_resource type="LabelSettings" id="LabelSettings_gefbc"]
+font = ExtResource("17_doqs5")
+font_size = 66
+font_color = Color(1, 0.827451, 1, 1)
+outline_size = 12
+outline_color = Color(0.768627, 0.188235, 0.580392, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qu430"]
+font = ExtResource("17_doqs5")
+font_size = 66
+font_color = Color(1, 0.65098, 1, 1)
+outline_size = 12
+outline_color = Color(0.776471, 0.188235, 0.580392, 1)
+
 [node name="level" type="Node2D"]
+position = Vector2(0, 34)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource("1_5vu0h")
@@ -48,7 +69,7 @@ position = Vector2(-785, -442)
 motion_mirroring = Vector2(3905, 2.08165e-12)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/layer1"]
-position = Vector2(1959, 764.5)
+position = Vector2(1966, 793)
 scale = Vector2(1.57407, 1.4625)
 texture = ExtResource("2_4ugbg")
 
@@ -184,4 +205,54 @@ neggrav = 1
 position = Vector2(570, 320)
 zoom = Vector2(0.425, 0.425)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = -774.0
+offset_top = 90.0
+offset_right = 313.0
+offset_bottom = 261.0
+value = 100.0
+fill_mode = 1
+texture_under = ExtResource("15_wm8bh")
+texture_progress = ExtResource("16_eq1cr")
+script = ExtResource("15_q3svu")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -774.0
+offset_top = -381.0
+offset_right = -258.0
+offset_bottom = -284.0
+script = ExtResource("15_a0p8a")
+
+[node name="Timer" type="Timer" parent="Control"]
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 38.0
+offset_right = 672.0
+offset_bottom = 194.0
+text = "Time left: 0:0"
+label_settings = SubResource("LabelSettings_gefbc")
+
+[node name="charm_count" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.237
+offset_left = 149.0
+offset_top = 194.0
+offset_right = 425.0
+offset_bottom = 239.011
+text = "0"
+label_settings = SubResource("LabelSettings_qu430")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(85, 233)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("20_olxx6")
+
 [connection signal="enemyspwan" from="Player" to="Enemy_spawns" method="_on_player_enemyspwan"]
+[connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]
